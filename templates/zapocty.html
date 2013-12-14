@@ -1,0 +1,12 @@
+<h1> zapocty </h1>
+{% for zapocet in zapocty %}
+<li> {{ zapocet.student.jmeno }}
+		{{ zapocet.student.prijmeni }}
+	{{ zapocet.predmet }}
+	{{ zapocet.body }}
+<a href = {% url zapocty.views.zapocetEdit zapocet.id %}> edit</a>
+ </li>
+
+
+
+{% endfor %}

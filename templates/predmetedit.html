@@ -1,0 +1,9 @@
+<h1>edit</h1>
+
+<form action="{% url zapocty.views.predmetEdit form.instance.id %}" method ="post">
+
+{{form.as_p }}
+<input type ="submit" value ="save">
+</form>
+
+<a href = {% url zapocty.views.predmety %}> back</a>
