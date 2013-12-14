@@ -1,9 +1,25 @@
 <h1> Studenti </h1>
-{% for student in studenti %}
-<li> {{ student.login }} 
-<a href = {% url zapocty.views.studentEdit student.id %}> edit</a>
-</li>
+<table border="1">
+<tr>
+<td>Jmeno</td>
+<td>Prijmeni</td>
+<td>login</td>
+<td>edit</td>
+</tr>
 
-<a href = {% url zapocty.views.studentAdd %}> add</a>
+
+{% for student in studenti %}
+ 
+<tr>
+<td>{{ student.jmeno }} </td>
+<td>{{ student.prijmeni }} </td>
+<td>{{ student.login }} </td>
+<td><a href = {% url zapocty.views.studentEdit student.id %}> edit</a></td>
+</tr>
+
+
 
 {% endfor %}
+
+<ul><a href = {% url zapocty.views.studentAdd %}> Pridej studenta</a></ul>
+<ul><a href = {% url zapocty.views.index%}> back index</a></ul>

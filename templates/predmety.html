@@ -1,7 +1,18 @@
-<h1> Studenti </h1>
+<h1> Predmety </h1>
+<table border="1">
+<tr>
+<td>Zkratka</td>
+<td>Nazev</td>
+<td>Edit</td>
+</tr>
 {% for predmet in predmety %}
-<li> {{ predmet.nazev }}
-<a href = {% url zapocty.views.predmetEdit predmet.id %}> edit</a>
- </li>
+
+<tr>
+ <td>{{predmet.zkratka}}</td>
+ <td>{{ predmet.nazev }}</td>
+ <td><a href = {% url zapocty.views.predmetEdit predmet.id %}> edit</a></td>
+</tr>
 
 {% endfor %}
+</table>
+<ul><a href = {% url zapocty.views.index%}> back index</a></ul>

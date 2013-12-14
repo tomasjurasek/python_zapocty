@@ -1,12 +1,28 @@
 <h1> zapocty </h1>
+<table border="1">
+<tr>
+<td>Jmeno</td>
+<td>Prijmeni</td>
+<td>login</td>
+<td>Predmet</td>
+<td>body</td>
+<td>edit</td>
+</tr>
+
 {% for zapocet in zapocty %}
-<li> {{ zapocet.student.jmeno }}
-		{{ zapocet.student.prijmeni }}
-	{{ zapocet.predmet }}
-	{{ zapocet.body }}
-<a href = {% url zapocty.views.zapocetEdit zapocet.id %}> edit</a>
- </li>
+<tr>
+<td>{{ zapocet.student.jmeno }}</td>
+<td>{{ zapocet.student.prijmeni }}</td>
+<td>{{ zapocet.student.login }}</td>
+<td>{{ zapocet.predmet }}</td>
+<td>{{ zapocet.body }}</td>
+<td><a href = {% url zapocty.views.zapocetEdit zapocet.id %}> edit</a></td>
+</tr>
 
 
 
 {% endfor %}
+
+<ul><a href = {% url zapocty.views.index%}> back index</a></ul>
+
+
